@@ -1,0 +1,287 @@
+openapi: 3.0.3
+info:
+  title: 'Laravel API Documentation'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+tags:
+  -
+    name: Endpoints
+    description: ''
+paths:
+  /api/sanpham:
+    get:
+      summary: ''
+      operationId: getApiSanpham
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    masp: 11
+                    tensp: 'MacBook Air M2 2022'
+                    anhdaidien: Air-M2.jpg
+                    chuyenmuc: CM1
+                    mota: "Loại card đồ họa : 8 nhân GPU, 16 nhân Neural Engine. |   \r\nDung lượng RAM : 8GB.|\r\nỔ cứng : 256GB. |\r\nHệ điều hành : MacOS. |\r\nLoại CPU : Apple M2. |\r\nTrọng lượng : 1.27 kg. |\r\nKích thước màn hình : 13.6 inches."
+                    hinhanhkhac1: Air-M2.jpg
+                    giamoi: 22.290.000
+                    giacu: 29.990.000
+                    trangthai: 1
+                  -
+                    masp: 5
+                    tensp: 'GIGABYTE G5 KF5-53VN353SH'
+                    anhdaidien: gigabyte-g5.jpg
+                    chuyenmuc: CM4
+                    mota: ''
+                    hinhanhkhac1: gigabyte-g5.jpg
+                    giamoi: 25.400.000
+                    giacu: 27.990.000
+                    trangthai: 1
+                  -
+                    masp: 6
+                    tensp: 'Dell Gaming G15 5515'
+                    anhdaidien: dell-g15.jpg
+                    chuyenmuc: CM1
+                    mota: "Loại card đồ họa : NVIDIA® GeForce RTX™ 3050 4GB GDDR6 + AMD Radeon Graphics. |\r\nLoại CPU : AMD Ryzen 7 5800H. |\r\nDung lượng RAM : 8GB. |\r\nỔ cứng : 256GB. |\r\nTrọng lượng : 2.57 kg. |\r\nHệ điều hành : Windows. |\r\nKích thước màn hình : 15.6 inches."
+                    hinhanhkhac1: dell-g15.jpg
+                    giamoi: 18.990.000
+                    giacu: 20.990.000
+                    trangthai: 1
+                  -
+                    masp: 7
+                    tensp: 'Acer Nitro V ANV15'
+                    anhdaidien: nitro-v.jpg
+                    chuyenmuc: CM1
+                    mota: "Loại card đồ họa : NVIDIA GeForce RTX 4050 6GB GDDR6 VRAM. |\r\nLoại CPU : Intel Core i7-13700H. |\r\nRAM : 16GB. |\r\nỔ cứng : 512GB. |\r\nKích thước màn hình : 15.6 inches.|\r\nHệ điều hành : Windows. |\r\nTrọng lượng : 2.1 kg."
+                    hinhanhkhac1: nitro-v.jpg
+                    giamoi: 27.390.000
+                    giacu: 30.990.000
+                    trangthai: 1
+                  -
+                    masp: 8
+                    tensp: 'HP VICTUS 16-d0294TX'
+                    anhdaidien: HP-VICTUS-16.jpg
+                    chuyenmuc: CM1
+                    mota: "Loại card đồ họa : NVIDIA GeForce RTX 3050 4GB GDDR6. |\nDung lượng RAM : 8GB. |\nỔ cứng : 512GB. |\nLoại CPU : Intel Core i7-12700H. |\nHệ điều hành : Windows. |\nTrọng lượng : 2.46 kg. |\nKích thước màn hình : 16.1 inches.\n"
+                    hinhanhkhac1: HP-VICTUS-16.jpg
+                    giamoi: 21.990.000
+                    giacu: 28.990.000
+                    trangthai: 1
+                  -
+                    masp: 9
+                    tensp: 'MSI Stealth 17 GS77'
+                    anhdaidien: MSI-Stealth-17.jpg
+                    chuyenmuc: CM1
+                    mota: 'Intel Core i7-13700HX'
+                    hinhanhkhac1: MSI-Stealth-17.jpg
+                    giamoi: 56.690.000
+                    giacu: 59.490.000
+                    trangthai: 1
+                  -
+                    masp: 10
+                    tensp: 'Acer Predator Triton 500'
+                    anhdaidien: Acer-Predator-Triton.jpg
+                    chuyenmuc: CM4
+                    mota: 'Intel Core i7-13700HX'
+                    hinhanhkhac1: Acer-Predator-Triton.jpg
+                    giamoi: 54.970.000
+                    giacu: 56.780.000
+                    trangthai: 1
+                  -
+                    masp: 4
+                    tensp: 'HP 15-DW3033DX 405F6UA'
+                    anhdaidien: hp15s.jpg
+                    chuyenmuc: CM3
+                    mota: 'Intel Core i5-1135G7.'
+                    hinhanhkhac1: hp15s.jpg
+                    giamoi: 8.990.000
+                    giacu: 11.400.000
+                    trangthai: 1
+                  -
+                    masp: 3
+                    tensp: 'HP 14-EP0112TU'
+                    anhdaidien: hp14s.jpg
+                    chuyenmuc: CM2
+                    mota: 'Intel Core i5-1135G7.'
+                    hinhanhkhac1: hp14s.jpg
+                    giamoi: 16.990.000
+                    giacu: 19.590.000
+                    trangthai: 1
+                  -
+                    masp: 1
+                    tensp: ' Asus ROG Strix Scar 18'
+                    anhdaidien: rog-scar.jpg
+                    chuyenmuc: CM2
+                    mota: 'AMD Ryzen 9 7945HX'
+                    hinhanhkhac1: rog-scar.jpg
+                    giamoi: 35.990.000
+                    giacu: 39.500.000
+                    trangthai: 1
+                  -
+                    masp: 2
+                    tensp: 'Asus TUF Gaming FX507ZC4'
+                    anhdaidien: TUFGM2.jpg
+                    chuyenmuc: CM3
+                    mota: ''
+                    hinhanhkhac1: TUFGM2.jpg
+                    giamoi: 19.290.000
+                    giacu: 25.590.000
+                    trangthai: 1
+      tags:
+        - Endpoints
+      security: []
+  '/api/sanpham/{sanpham_masp}':
+    get:
+      summary: ''
+      operationId: getApiSanphamSanpham_masp
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  masp: 11
+                  tensp: 'MacBook Air M2 2022'
+                  anhdaidien: Air-M2.jpg
+                  chuyenmuc: CM1
+                  mota: "Loại card đồ họa : 8 nhân GPU, 16 nhân Neural Engine. |   \r\nDung lượng RAM : 8GB.|\r\nỔ cứng : 256GB. |\r\nHệ điều hành : MacOS. |\r\nLoại CPU : Apple M2. |\r\nTrọng lượng : 1.27 kg. |\r\nKích thước màn hình : 13.6 inches."
+                  hinhanhkhac1: Air-M2.jpg
+                  giamoi: 22.290.000
+                  giacu: 29.990.000
+                  trangthai: 1
+                properties:
+                  masp:
+                    type: integer
+                    example: 11
+                  tensp:
+                    type: string
+                    example: 'MacBook Air M2 2022'
+                  anhdaidien:
+                    type: string
+                    example: Air-M2.jpg
+                  chuyenmuc:
+                    type: string
+                    example: CM1
+                  mota:
+                    type: string
+                    example: "Loại card đồ họa : 8 nhân GPU, 16 nhân Neural Engine. |   \r\nDung lượng RAM : 8GB.|\r\nỔ cứng : 256GB. |\r\nHệ điều hành : MacOS. |\r\nLoại CPU : Apple M2. |\r\nTrọng lượng : 1.27 kg. |\r\nKích thước màn hình : 13.6 inches."
+                  hinhanhkhac1:
+                    type: string
+                    example: Air-M2.jpg
+                  giamoi:
+                    type: string
+                    example: 22.290.000
+                  giacu:
+                    type: string
+                    example: 29.990.000
+                  trangthai:
+                    type: integer
+                    example: 1
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: sanpham_masp
+        description: ''
+        example: 11
+        required: true
+        schema:
+          type: integer
+  /api/register:
+    post:
+      summary: ''
+      operationId: postApiRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: ''
+                  example: consequatur
+                  nullable: false
+                password:
+                  type: string
+                  description: 'Must be at least 3 characters.'
+                  example: '[2UZ5ij-e/dl4'
+                  nullable: false
+                fullname:
+                  type: string
+                  description: ''
+                  example: consequatur
+                  nullable: false
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: carolyne.luettgen@example.org
+                  nullable: false
+              required:
+                - username
+                - password
+                - fullname
+                - email
+      security: []
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: ''
+                  example: consequatur
+                  nullable: false
+                password:
+                  type: string
+                  description: ''
+                  example: consequatur
+                  nullable: false
+              required:
+                - username
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      operationId: postApiLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
