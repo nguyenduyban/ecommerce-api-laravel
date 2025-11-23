@@ -12,9 +12,12 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\HangController;
 use App\Http\Controllers\KhachHangController;
 use App\Http\Controllers\KhoController;
+use App\Http\Controllers\KhoDetailController;
 use App\Http\Controllers\SanPhamController;
 use App\Http\Controllers\SlideShowController;
+use App\Http\Controllers\StatsController;
 use App\Http\Controllers\VnPayController;
+use App\Http\Controllers\NhaCungCapController;
 use Illuminate\Support\Facades\Route;
 
 // Đăng ký, đăng nhập,cập nhật, đăng xuất
@@ -66,11 +69,10 @@ Route::get('/slideshow/{STT}', [SlideShowController::class, 'show']);
 Route::get('/chat/users', [ChatController::class, 'getChatUsers']);
 Route::get('/messages/{userId}', [ChatController::class, 'getMessages']);
 Route::post('/send', [ChatController::class, 'send']);
-//kho
+// kho
 Route::get('/kho', [KhoController::class, 'index']);
 Route::get('/kho/{id}', [KhoController::class, 'show']);
 Route::get('/kho/sp/{masp}', [KhoController::class, 'getByProduct']);
-
 
 Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::post('/themhang', [HangController::class, 'store']);
@@ -98,12 +100,30 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     Route::get('/donhang', [DonHangController::class, 'index']);
     Route::get('/donhang/{id}', [DonHangController::class, 'show']);
     Route::put('/donhang/{id}/status', [DonHangController::class, 'updateStatus']);
-    // kho
-    Route::post('/kho/nhap', [KhoController::class, 'nhapKho']);
+    // nha cung cap
+    Route::get('/nhacungcap', [NhaCungCapController::class, 'index']);
+    Route::post('/nhacungcap/them', [NhaCungCapController::class, 'store']);
+    Route::get('/nhacungcap/{id}', [NhaCungCapController::class, 'show']);
+    Route::put('/nhacungcap/update/{id}', [NhaCungCapController::class, 'update']);
+    Route::delete('/nhacungcap/xoa/{id}', [NhaCungCapController::class, 'destroy']);
+    // chi tiet kho
+    Route::get('/kho/chitiet', [KhoDetailController::class, 'index']);
+    Route::get('/kho/chitiet/{id}', [KhoDetailController::class, 'show']);
+    Route::post('kho/chitiet/nhap', [KhoDetailController::class, 'nhapKhoChiTiet']);
+    Route::put('kho/chitiet/update/{id}', [KhoDetailController::class, 'update']);
+    Route::delete('kho/chitiet/xoa/{id}', [KhoDetailController::class, 'destroy']);
+    Route::get('/kho/chitiet/product/{masp}', [KhoDetailController::class, 'getByProduct']);
     // account
     Route::get('/accounts', [AccountController::class, 'index']);
     Route::get('/accounts/{id}', [AccountController::class, 'show']);
     Route::put('/accounts/{id}', [AccountController::class, 'update']);
     Route::put('/accounts/{id}/password', [AccountController::class, 'updatePassword']);
     Route::delete('/accounts/{id}', [AccountController::class, 'destroy']);
+    // slideshow
+    Route::post('/slides', [SlideshowController::class, 'store']);
+    Route::put('/slides/{id}', [SlideshowController::class, 'update']);
+    Route::delete('/slides/{id}', [SlideshowController::class, 'destroy']);
+    // stats
+    Route::get('/stats', [StatsController::class, 'index']);
+    Route::get('/stats/revenue', [StatsController::class, 'revenueByMonth']);
 });
