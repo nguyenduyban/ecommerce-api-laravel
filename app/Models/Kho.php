@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\SanPham;
 class Kho extends Model
 {
     use HasFactory;
@@ -23,6 +23,6 @@ class Kho extends Model
 
     public function sanpham()
     {
-        return $this->belongsTo(\App\Models\SanPham::class, 'id_sanpham', 'masp');
+        return $this->belongsTo(SanPham::class, 'id_sanpham', 'masp');
     }
 }

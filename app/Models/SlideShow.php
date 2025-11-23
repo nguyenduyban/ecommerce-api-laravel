@@ -11,12 +11,11 @@ class SlideShow extends Model
 
     protected $table = 'slideshow';
     protected $primaryKey = 'STT';
-    //public $incrementing = true;
+    public $incrementing = true;
     public $timestamps = false;
 
     protected $fillable = [
         'STT',
-        'tenfile',
         'trangthai'
     ];
 }
