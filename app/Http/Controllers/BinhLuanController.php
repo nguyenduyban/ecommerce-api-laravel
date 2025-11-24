@@ -19,7 +19,6 @@ class BinhLuanController extends Controller
     {
         $comments = BinhLuan::with('user:id,fullname')
             ->where('sanpham_id', $sanpham_id)
-            ->where('trangthai', 'duyệt')
             ->orderByDesc('created_at')
             ->get();
 
@@ -42,27 +41,6 @@ class BinhLuanController extends Controller
         ]);
 
         return response()->json($comment->load('user'), 201);
-    }
-
-    public function updateStatus(Request $request, $id)
-    {
-        $request->validate([
-            'trangthai' => 'required|in:pending,duyệt',
-        ]);
-
-        $comment = BinhLuan::find($id);
-
-        if (! $comment) {
-            return response()->json(['message' => 'Không tìm thấy bình luận'], 404);
-        }
-
-        $comment->trangthai = $request->trangthai;
-        $comment->save();
-
-        return response()->json([
-            'message' => 'Cập nhật trạng thái thành công',
-            'comment' => $comment,
-        ]);
     }
 
     public function destroy($id)
