@@ -11,7 +11,7 @@ class BinhLuan extends Model
 
     protected $table = 'binhluan';
 
-    protected $fillable = ['sanpham_id', 'user_id', 'noidung', 'trangthai'];
+    protected $fillable = ['sanpham_id', 'user_id', 'noidung'];
 
     public function user()
     {

@@ -37,7 +37,6 @@ class BinhLuanController extends Controller
             'user_id' => Auth::id(),
             'sanpham_id' => $request->sanpham_id,
             'noidung' => $request->noidung,
-            'trangthai' => 'pending',
         ]);
 
         return response()->json($comment->load('user'), 201);
