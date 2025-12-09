@@ -75,7 +75,6 @@ public function nhapKho(Request $request)
         'soluong_nhap' => 'required|integer|min:1',
         'id_ncc' => 'nullable|exists:nha_cung_cap,id', 
         'gia_mua' => 'nullable|numeric|min:0',
-        'gia_ban' => 'nullable|numeric|min:0',
     ]);
 
     DB::transaction(function () use ($validated, &$kho) {
@@ -98,7 +97,6 @@ public function nhapKho(Request $request)
             $lot->soluong_nhap += $qty;
             $lot->soluong_ton   += $qty;
             if (isset($validated['gia_mua'])) $lot->gia_mua = $validated['gia_mua'];
-            if (isset($validated['gia_ban'])) $lot->gia_ban = $validated['gia_ban'];
             $lot->save();
         } else {
             KhoDetail::create([
@@ -107,9 +105,7 @@ public function nhapKho(Request $request)
                 'soluong_nhap' => $qty,
                 'soluong_ton' => $qty,
                 'gia_mua' => $validated['gia_mua'] ?? 0,
-                'gia_ban' => $validated['gia_ban'] ?? 0,
                 'ngay_san_xuat' => now(),
-                'han_su_dung' => now()->addYears(2),
                 'ngay_bao_hanh' => now(),
                 'han_bao_hanh' => now()->addYear(),
                 'ghi_chu' => 'Tự động tạo từ kho tổng'
