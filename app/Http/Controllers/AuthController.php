@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\TaiKhoan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
 class AuthController extends Controller
 {
     // đăng ký
@@ -16,7 +15,7 @@ class AuthController extends Controller
             'password' => 'required|min:6',
             'fullname' => 'required',
             'email' => 'required|email|unique:taikhoan',
-            'sdt' => 'required|int|digits:11',
+            'sdt' => 'required|int|digits:10',
             'diachi' => 'required',
         ]);
 
@@ -80,7 +79,7 @@ class AuthController extends Controller
         // Chỉ validate các trường người dùng được phép chỉnh sửa
         $request->validate([
             'fullname' => 'nullable|string|max:255',
-            'sdt' => 'nullable|digits|max:11',
+            'sdt' => 'nullable|string|max:10',
             'diachi' => 'nullable|string|max:255',
             'email' => 'nullable|email|unique:taikhoan,email,'.$user->username.',username',
         ]);
